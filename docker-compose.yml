@@ -20,8 +20,8 @@ services:
     env_file:
       - .env
     networks:
-      - poc-api_picachu-net
+      - picachu-api-private_picachu-net
 
 networks:
-  poc-api_picachu-net:
+  picachu-api-private_picachu-net:
     external: true

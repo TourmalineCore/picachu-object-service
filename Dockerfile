@@ -8,8 +8,6 @@ ENV PYTHONFAULTHANDLER 1
 ENV PYTHONUNBUFFERED 1
 
 RUN python -m pip install --upgrade pip
-#RUN pip install poetry
-#RUN poetry install
 
 ENV POETRY_VERSION=1.2.2
 ENV POETRY_HOME='/opt/poetry'
