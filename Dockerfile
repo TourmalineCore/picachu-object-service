@@ -24,7 +24,6 @@ RUN python -m venv $POETRY_VENV \
 
 ENV PATH="$POETRY_VENV/bin:$PATH"
 
-RUN pip install pandas
 RUN poetry config virtualenvs.create false
 RUN poetry install --no-interaction --no-ansi
 
