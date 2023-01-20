@@ -71,12 +71,12 @@ lint: ## runs linting
 .PHONY: poetry
 poetry: ## executes poetry command in the docker container
 	@echo poetry $(POETRY_ARGS)
-	docker compose run --rm --no-deps colors_model poetry $(POETRY_ARGS)
+	docker compose run --rm --no-deps objects-model poetry $(POETRY_ARGS)
 
 .PHONY: poetry-install
 poetry-install: ## installs package in the **docker** container
-	docker compose -f docker-compose.yml build --quiet colors_model
-	docker compose -f docker-compose.yml run --rm --no-deps colors_model poetry add $(POETRY_INSTALL_PACKAGE_NAME) $(POETRY_INSTALL_PACKAGE_VERSION)
+	docker compose -f docker-compose.yml build --quiet objects-model
+	docker compose -f docker-compose.yml run --rm --no-deps objects-model poetry add $(POETRY_INSTALL_PACKAGE_NAME) $(POETRY_INSTALL_PACKAGE_VERSION)
 
 .PHONY: run
 run: ## runs the api locally via **docker**
@@ -84,4 +84,4 @@ run: ## runs the api locally via **docker**
 
 .PHONY: test
 test: ## runs unit tests via **docker**
-	docker compose run --rm --no-deps colors_model poetry run pytest -v
+	docker compose run --rm --no-deps objects-model poetry run pytest -v
