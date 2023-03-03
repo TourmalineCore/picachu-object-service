@@ -2,17 +2,16 @@ version: '3.8'
 
 services:
   run-model-locally:
-    container_name: objects_model-local-starter
+    container_name: objects-model-local-starter
     restart: "no"
     image: tianon/true
     depends_on:
       - objects-model
 
   objects-model:
-    container_name: objects_model
+    container_name: objects-model
     build:
       context: .
-    command: poetry run python ./objects_model/model.py --name objects_model  --type objects
     image: objects-model:latest
     restart: unless-stopped
     volumes:

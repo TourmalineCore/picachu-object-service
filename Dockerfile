@@ -1,4 +1,4 @@
-FROM python:3.8.10 as base
+FROM python:3.10.9-slim as base
 
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
@@ -29,4 +29,4 @@ RUN poetry install --no-interaction --no-ansi
 
 RUN pip3 install torch torchvision --extra-index-url https://download.pytorch.org/whl/cpu
 
-CMD ["poetry", "run", "python", "./objects_model/model.py", "--name", "objects_model","--type","objects"]
+CMD poetry run python application.py
