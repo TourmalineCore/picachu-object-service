@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  run-model-locally:
+    container_name: objects-model-local-starter
+    restart: "no"
+    image: tianon/true
+    depends_on:
+      - objects-model
+
+  objects-model:
+    container_name: objects-model
+    build:
+      context: .
+    image: objects-model:latest
+    restart: unless-stopped
+    volumes:
+      - .:/app-workspace
+    env_file:
+      - .env
+    networks:
+      - picachu-api-private_picachu-net
+
+networks:
+  picachu-api-private_picachu-net:
+    external: true
