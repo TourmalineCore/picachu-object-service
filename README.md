@@ -1,4 +1,4 @@
-# picachu-object-service
+# tourmanique-object-service
 
 ## Description
 A project to determine the uniqueness of a photo by its components. 
@@ -66,7 +66,7 @@ The main idea is to run project in the docker container to be able to run this p
   make run
   ```
 #### Services schema
-![picachu_services_schema.png](picachu_services_schema.png)
+![tourmanique_services_schema.png](tourmanique_services_schema.png)
 
 ### Linting
 

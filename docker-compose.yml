@@ -19,8 +19,8 @@ services:
     env_file:
       - .env
     networks:
-      - picachu-api-private_picachu-net
+      - tourmanique-api-private_tourmanique-net
 
 networks:
-  picachu-api-private_picachu-net:
+  tourmanique-api-private_tourmanique-net:
     external: true
